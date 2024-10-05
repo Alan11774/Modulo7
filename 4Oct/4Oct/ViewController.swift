@@ -15,17 +15,19 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         // Do any additional setup after loading the view.
         let ud = UserDefaults.standard
-        if ud.string(forKey: "login") == "OK"{
+        if ud.string(forKey: Utils.LOGIN_KEY) == "OK"{
             performSegue(withIdentifier: "loginOk", sender: self)
         }
-        
-        
     }
-    /*func validateUserDefaulst(var type: String){
-        let ud = UserDefaults.standard
-        ud.set("OK", forKey: "login")
-        performSegue(withIdentifier: "loginOk", sender: self)
-    }*/
+    @IBAction func btnRegistroTouch(_ sender: Any) {
+        //Muy parecido al segue, es otra forma de abrir una vista
+        // Abre RegisterViewController y hace lo declarado en cocoa touch script
+        let rvc = RegisterViewController()
+        
+        // Si se desea full screen
+        rvc.modalPresentationStyle = .fullScreen
+        present(rvc, animated: true) // this
+    }
     // We can track the action of the biutton clicked in this class
     @IBAction func btnEntrarTouch(_ sender: Any) {
         var message = ""
@@ -50,7 +52,7 @@ class ViewController: UIViewController {
         if message.isEmpty{
             print("Haz iniciado sesion")
             let ud = UserDefaults.standard
-            ud.set("OK", forKey: "login")
+            ud.set("OK", forKey: Utils.LOGIN_KEY)
             performSegue(withIdentifier: "loginOk", sender: self)
             
         }
