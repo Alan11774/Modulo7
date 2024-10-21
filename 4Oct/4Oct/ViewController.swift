@@ -30,41 +30,46 @@ class ViewController: UIViewController {
     }
     // We can track the action of the biutton clicked in this class
     @IBAction func btnEntrarTouch(_ sender: Any) {
-        var message = ""
+        // validar si los cuadros de texto no están vacios
+        var mensaje = ""
+        // desempaquetamos los strings en los opcionales
         let correo = txtCorreo.text ?? ""
         let contraseña = txtContraseña.text ?? ""
-        if correo.isEmpty {
-            message += "Ingrese un correo\n"
-        }else if contraseña.isEmpty {
-            message += "Ingrese una contraseña\n"
+        if  correo.isEmpty {
+            mensaje = "Por favor indique su correo"
         }
-        else{
-            // With regex we can evaluate the string using the predicate in correo valido.
-            // we use correo valido to evaluate correo variable.
+        else if contraseña.isEmpty {
+            mensaje = "Debe indicar su contraseña"
+        }
+        // Otras validaciones....
+        else { // validamos que parezca un correo válido
             let regex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
-            let correoValido = NSPredicate(format: "SELF MATCHES %@", regex)
-            // if not expression
-            if !correoValido.evaluate(with: correo){
-                message = "No es un correo valido"
+            let correoValido = NSPredicate(format:"SELF MATCHES %@", regex)
+            if !correoValido.evaluate(with: correo) {
+                mensaje = "No es un correo válido"
             }
-            
+            // TODO: buscar el correo, y comparar el password
+            if let unaPersona = DataManager.shared.buscaPersona(correo: correo) {
+                if !unaPersona.password.elementsEqual(contraseña) {
+                    mensaje = "El password no coincide"
+                }
+            }
+            else { mensaje = "no existe ese correo" }
         }
-        if message.isEmpty{
-            print("Haz iniciado sesion")
+        if mensaje.isEmpty {
+            print( "Todo OK. hacer el login" )
+            // guardar la bandera de login Y navegar a HOME
             let ud = UserDefaults.standard
-            ud.set("OK", forKey: Utils.LOGIN_KEY)
-            performSegue(withIdentifier: "loginOk", sender: self)
-            
+            ud.set("OK", forKey:Utils.LOGIN_KEY)
+            performSegue(withIdentifier:"loginOK", sender: self)
         }
-        else{
-            // Like the toast this is the opup messages.
-            //message += "Bienvenido "
-            let ac = UIAlertController(title: "Hola", message: message, preferredStyle: .alert)
-            let action = UIAlertAction(title: "Ok", style: .default)
-                ac.addAction(action)
-                self.present(ac, animated: true)
-            }
+        else {
+            let ac = UIAlertController(title: "hola", message:mensaje, preferredStyle: .alert)
+            let action = UIAlertAction(title: "ok", style: .default)
+            ac.addAction(action)
+            self.present(ac, animated: true)
         }
     }
+}
     
 

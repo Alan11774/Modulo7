@@ -71,7 +71,7 @@ class RegisterViewController: UIViewController {
         else { return }
         
         let persona = Persona(nombre: nombre, apellido: apellidos, correo: correo, password: password)
-        DataManager.guardaPersona(persona)
+        DataManager.shared.guardaPersona(persona)
         dismiss(animated: true)
         // Archivos locales
         guard let urlAlArchivo = Bundle.main.url(forResource: "package_foo", withExtension:"xml")
@@ -86,10 +86,12 @@ class RegisterViewController: UIViewController {
                 print (urlDestino)
             } catch {
                 print (error.localizedDescription)
-            }
+        
+        }
         }
 
     }
+
     @objc func btnSalirTouch() {
         print("Salir")
         dismiss(animated: true)
