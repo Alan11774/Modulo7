@@ -6,7 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		642A13072CC70837006152D5 /* Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 642A13062CC70837006152D5 /* Network.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		642A13062CC70837006152D5 /* Network.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Network.framework; path = System/Library/Frameworks/Network.framework; sourceTree = SDKROOT; };
 		64E1197C2CC6CDF40014E69E /* Barman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Barman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -36,16 +41,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				642A13072CC70837006152D5 /* Network.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		642A13052CC70836006152D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				642A13062CC70837006152D5 /* Network.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		64E119732CC6CDF40014E69E = {
 			isa = PBXGroup;
 			children = (
 				64E1197E2CC6CDF40014E69E /* Barman */,
+				642A13052CC70836006152D5 /* Frameworks */,
 				64E1197D2CC6CDF40014E69E /* Products */,
 			);
 			sourceTree = "<group>";
