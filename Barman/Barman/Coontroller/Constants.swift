@@ -14,7 +14,7 @@ class Constants {
         //"https://my.api.mockaroo.com/mascotas.json?key=ee082920"
         // "https://private-56712-yourlawyer1.apiary-mock.com/lawyer/types"
     static let URL_DRINK_IMAGES =
-    "http://janzelaznog.com/DDAM/iOS/drinksimages/1.jpg"
+    "http://janzelaznog.com/DDAM/iOS/drinksimages/"
     //"https://private-56712-yourlawyer1.apiary-mock.com/lawyer/types/1"
 
 }

@@ -15,7 +15,7 @@ public class Bebidas: NSManagedObject {
         let name = (dict["name"] as? String) ?? ""
         let directions = (dict["directions"] as? String) ?? ""
         let ingredients = (dict["ingredients"] as? String) ?? ""
-        let img = (dict["img"] as? String) ?? ""
+        let img = "\(Constants.URL_DRINK_IMAGES)\(dict["img"] ?? "")"
         self.name = name
         self.directions = directions
         self.ingredients = ingredients

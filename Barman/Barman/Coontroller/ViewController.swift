@@ -24,13 +24,17 @@ class ViewController: UIViewController {
         "Ingredients: \(laBebida.ingredients ?? "")\n" +
         "Intructions: \(laBebida.directions ?? "")\n"
         if laBebida.img != nil {
-            info += "Procesar Imagen"
+            info += laBebida.img ?? "No_value"
+            print(laBebida.img ?? "No_value")
             print(info)
+            
             }
             else {
                 info += "\nDISPONIBLE PARA ADOPCIÓN"
             }
-            detalle.tv.text = info
+        detalle.tv.text = info
+        detalle.tv.sizeToFit()
+        detalle.setImage(from: laBebida.)
         }
 
 }
