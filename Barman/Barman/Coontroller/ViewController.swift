@@ -15,6 +15,12 @@ class ViewController: UIViewController {
     var laBebida: Bebidas!
     var detalle: DetailView!
 
+    
+    
+    @IBAction func botonAgregarReceta(_ sender: UIButton) {
+        print("Hola")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -24,18 +30,6 @@ class ViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
             super.viewDidAppear(animated)
-//        var info = "\(laBebida.name ?? "")\n" +
-//        "Ingredients: \(laBebida.ingredients ?? "")\n" +
-//        "Intructions: \(laBebida.directions ?? "")\n"
-//        if laBebida.img != nil {
-//            info += laBebida.img ?? "No_value"
-//            print(laBebida.img ?? "No_value")
-//            print(info)
-//            
-//            }
-//            else {
-//                info += "\nDISPONIBLE PARA ADOPCIÓN"
-//            }
         LabelName.text = laBebida.name
         LabelName.numberOfLines = 0
         
