@@ -1,44 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YMz-ZU-Vz5">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Barman" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1891" y="635"/>
-        </scene>
-        <!--Table View Controller-->
+        <!--Bebidas-->
         <scene sceneID="ydB-eb-DlS">
             <objects>
                 <tableViewController id="H7K-9Y-m7H" customClass="TableViewController" customModule="Barman" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Ewg-N9-dp2">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="labelColor"/>
                         <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bebidaCell" id="w3b-PQ-nJL">
-                                <rect key="frame" x="0.0" y="50" width="393" height="44"/>
+                                <rect key="frame" x="0.0" y="50" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="w3b-PQ-nJL" id="IL6-qe-BUt">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" systemColor="labelColor"/>
@@ -49,7 +35,7 @@
                             <outlet property="delegate" destination="H7K-9Y-m7H" id="OgS-9E-vby"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="nNO-2i-mi7"/>
+                    <navigationItem key="navigationItem" title="Bebidas" id="nNO-2i-mi7"/>
                     <connections>
                         <segue destination="dWU-tX-ijc" kind="showDetail" identifier="detailedDrink" id="Kbu-Sn-dMd"/>
                     </connections>
@@ -63,11 +49,59 @@
             <objects>
                 <viewController id="dWU-tX-ijc" customClass="ViewController" customModule="Barman" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vK3-5D-4b2">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Yx-wZ-pJI">
+                                <rect key="frame" x="80" y="100" width="160" height="33.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vPz-H7-E3u">
+                                <rect key="frame" x="20" y="157.5" width="283" height="292.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="vPz-H7-E3u" secondAttribute="height" multiplier="1:1" id="2ea-dY-5ER"/>
+                                </constraints>
+                                <imageReference key="image" image="square.and.arrow.down.badge.clock" catalog="system" symbolScale="large"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Ingredients" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpR-iC-rrk">
+                                <rect key="frame" x="40" y="483.5" width="240" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Description" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3At-Aa-KCk">
+                                <rect key="frame" x="40" y="544.5" width="240" height="21"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="x0a-W3-9cO"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BpR-iC-rrk" firstAttribute="leading" secondItem="x0a-W3-9cO" secondAttribute="leading" constant="40" id="2Bk-gL-1hz"/>
+                            <constraint firstItem="6Yx-wZ-pJI" firstAttribute="leading" secondItem="x0a-W3-9cO" secondAttribute="leading" constant="80" id="53k-SY-zG7"/>
+                            <constraint firstItem="x0a-W3-9cO" firstAttribute="trailing" secondItem="3At-Aa-KCk" secondAttribute="trailing" constant="40" id="FUa-ah-79F"/>
+                            <constraint firstAttribute="bottom" secondItem="3At-Aa-KCk" secondAttribute="bottom" constant="100" id="G2k-5c-03Q"/>
+                            <constraint firstItem="x0a-W3-9cO" firstAttribute="trailing" secondItem="vPz-H7-E3u" secondAttribute="trailing" constant="20" id="G7V-sz-cKM"/>
+                            <constraint firstItem="vPz-H7-E3u" firstAttribute="leading" secondItem="x0a-W3-9cO" secondAttribute="leading" constant="20" id="Isi-Ru-81l"/>
+                            <constraint firstItem="3At-Aa-KCk" firstAttribute="leading" secondItem="x0a-W3-9cO" secondAttribute="leading" constant="40" id="L1L-jH-DdE"/>
+                            <constraint firstItem="x0a-W3-9cO" firstAttribute="trailing" secondItem="6Yx-wZ-pJI" secondAttribute="trailing" constant="80" id="j1J-eV-ThE"/>
+                            <constraint firstItem="vPz-H7-E3u" firstAttribute="top" secondItem="6Yx-wZ-pJI" secondAttribute="bottom" constant="30" id="k4F-Uf-5aA"/>
+                            <constraint firstItem="3At-Aa-KCk" firstAttribute="top" secondItem="BpR-iC-rrk" secondAttribute="bottom" constant="40" id="k64-Um-gqt"/>
+                            <constraint firstItem="6Yx-wZ-pJI" firstAttribute="top" secondItem="x0a-W3-9cO" secondAttribute="top" constant="100" id="o0b-Ah-bWA"/>
+                            <constraint firstItem="BpR-iC-rrk" firstAttribute="top" secondItem="vPz-H7-E3u" secondAttribute="bottom" constant="40" id="p7t-QQ-cgb"/>
+                            <constraint firstItem="x0a-W3-9cO" firstAttribute="trailing" secondItem="BpR-iC-rrk" secondAttribute="trailing" constant="40" id="yZ1-Kj-v8t"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ImageBebidas" destination="vPz-H7-E3u" id="RMb-js-Ydq"/>
+                        <outlet property="LabelDescription" destination="3At-Aa-KCk" id="3Rd-jR-srI"/>
+                        <outlet property="LabelIngredients" destination="BpR-iC-rrk" id="Xzv-dX-5kk"/>
+                        <outlet property="LabelName" destination="6Yx-wZ-pJI" id="jTO-2I-nW3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zpU-es-o0X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -79,7 +113,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YMz-ZU-Vz5" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5hX-FY-tSm">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -95,11 +129,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="square.and.arrow.down.badge.clock" catalog="system" width="113" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

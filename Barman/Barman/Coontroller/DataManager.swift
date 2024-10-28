@@ -79,31 +79,6 @@ class DataManager: NSObject {
             }
         }
     }
-//    func verifyImage(_ imageUrl: URL) {
-//      let session = URLSession(configuration: .default)
-//      let task = session.dataTask(with: imageUrl) { data, response, error in
-//
-//        if let error = error {
-//          print("Error downloading image: \(error.localizedDescription)")
-//          return
-//        }
-//        
-//        guard
-//     let data = data else { return }
-//        
-//        // Save the downloaded image data to documents directory (modify as needed)
-//        if let urlDocumentos = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-//          let urlDelArchivo = urlDocumentos.appendingPathComponent(imageUrl.lastPathComponent)
-//          do {
-//            try data.write(to: urlDelArchivo)
-//            print("Image downloaded successfully: \(urlDelArchivo)")
-//          } catch {
-//            print("Error saving downloaded image: \(error.localizedDescription)")
-//          }
-//        }
-//      }
-//      task.resume()
-//    }
 
             func guardaBebidas(_ arregloJSON:[[String:Any]]) {
                 guard let entidadDesc = NSEntityDescription.entity(forEntityName:"Bebidas", in:persistentContainer.viewContext)
@@ -113,7 +88,7 @@ class DataManager: NSObject {
                     let b = NSManagedObject(entity: entidadDesc, insertInto: persistentContainer.viewContext) as! Bebidas
                     // 2. setear las properties del objeto, con los datos del dict
                     b.inicializaCon(dict)
-                    if let laURL = URL(string:b.img ?? "") {
+                    if let laURL = URL(string:"\(Constants.URL_DRINK_IMAGES)\(b.img ?? "")") {
 //                    if let laURL = URL(string:Constants.URL_BASE) {
                         verifyImage(laURL)
                     }
@@ -121,38 +96,6 @@ class DataManager: NSObject {
                 // 3. salvar el objeto
                 saveContext()
             }
-//    func guardaResponsables(_ arregloJSON:[[String:Any]]) {
-//        guard let entidadDesc = NSEntityDescription.entity(forEntityName:"Bebidas", in:persistentContainer.viewContext)
-//        else { return }
-//        for dict in arregloJSON {
-//            let b = NSManagedObject(entity: entidadDesc, insertInto: persistentContainer.viewContext) as! Bebidas
-//            b.inicializaCon(dict)
-//            // buscar si existe una mascota relacionada
-//            if let idMascota = dict["name"] as? String,
-//               idMascota != "" {
-//                if let mascota = buscaMascotaConId(idMascota) {
-//                    // establecemos la relación del responsable con la mascota
-//                    r.mascotas?.adding(mascota)
-//                    saveContext()
-//                    // y también la relación de la mascota con el responsable
-//                    mascota.responsable = r
-//                }
-//                else { saveContext() }
-//            }
-//            else { saveContext() }
-//        }
-//    }
-//
-//    func buscaMascotaConId(_ idM: Int16) -> Mascota? {
-//        let elQuery = NSFetchRequest<NSFetchRequestResult>(entityName:"Mascota")
-//        let elFiltro = NSPredicate (format:"id == %d", idM)
-//        elQuery.predicate = elFiltro
-//        do {
-//            let tmp = try persistentContainer.viewContext.fetch(elQuery) as! [Mascota]
-//            return tmp.first
-//        } catch { print ("error en el query!") }
-//        return nil
-//    }
 
             lazy var persistentContainer: NSPersistentContainer = {
                 /*
