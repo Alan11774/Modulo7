@@ -7,16 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A509CD24-6D94-4814-929B-8ACD5BEF4A39"
+            uuid = "377EB3E6-DDE7-4D60-8494-E14A7852F65F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Barman/Coontroller/FormularioViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "Guardar(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D4657BF1-EA38-4DF6-BD55-9AB304A98C51"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Barman/Coontroller/DataManager.swift"
+            filePath = "Barman/Coontroller/FormularioViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "verifyImage(_:)"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "Guardar(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -9,10 +9,16 @@ import UIKit
 
 class TableViewController: UITableViewController {
     var bebidas = [Bebidas]()
-
+    
+    @IBAction func nuevaReceta(_ sender: Any) {
+        print("Agregar Receta")
+        performSegue(withIdentifier:"addDrink", sender: self)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         bebidas = DataManager.shared.todasLasBebidas()
+        tableView.reloadData()
         NotificationCenter.default.addObserver(self, selector: #selector(mostrarTabla), name: NSNotification.Name(rawValue: "BD_LISTA"), object: nil)
     }
     
@@ -49,8 +55,13 @@ class TableViewController: UITableViewController {
         performSegue(withIdentifier:"detailedDrink", sender:b)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destino = segue.destination as! ViewController
-        destino.laBebida = sender as? Bebidas
+        if segue.identifier == "detailedDrink"
+        {
+            let destino = segue.destination as! ViewController
+            destino.laBebida = sender as? Bebidas
+        } else {
+            _ = segue.destination as! FormularioViewController
+        }
     }
 
 

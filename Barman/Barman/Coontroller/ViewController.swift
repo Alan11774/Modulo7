@@ -15,12 +15,6 @@ class ViewController: UIViewController {
     var laBebida: Bebidas!
     var detalle: DetailView!
 
-    
-    
-    @IBAction func botonAgregarReceta(_ sender: UIButton) {
-        print("Hola")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
