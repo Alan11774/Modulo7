@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "377EB3E6-DDE7-4D60-8494-E14A7852F65F"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Barman/Coontroller/FormularioViewController.swift"
@@ -23,16 +23,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D4657BF1-EA38-4DF6-BD55-9AB304A98C51"
-            shouldBeEnabled = "No"
+            uuid = "208D8D48-C884-42B3-A5D9-67EB42AAB5DD"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Barman/Coontroller/FormularioViewController.swift"
+            filePath = "Barman/Coontroller/TableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "Guardar(_:)"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "mostrarTabla()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8769FD80-BDDD-4B79-8EFE-D14F7A0A9CF9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Barman/Coontroller/TableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

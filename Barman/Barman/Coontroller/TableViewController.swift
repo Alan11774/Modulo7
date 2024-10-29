@@ -15,13 +15,29 @@ class TableViewController: UITableViewController {
         performSegue(withIdentifier:"addDrink", sender: self)
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        bebidas = DataManager.shared.todasLasBebidas() // Cargar las recetas existentes
+
+        // Observar la notificación cuando se guarde una nueva receta
+        NotificationCenter.default.addObserver(self, selector: #selector(recargarTabla), name: NSNotification.Name("nuevaRecetaGuardada"), object: nil)
+    }
+
+    // Método que se ejecutará cuando se reciba la notificación
+    @objc func recargarTabla() {
+        bebidas = DataManager.shared.todasLasBebidas() // Recargar los datos desde Core Data
+        tableView.reloadData() // Actualizar la tabla
+    }
+
+    deinit {
+        // Remover el observador cuando la vista se destruya
+        NotificationCenter.default.removeObserver(self)
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         bebidas = DataManager.shared.todasLasBebidas()
-        tableView.reloadData()
         NotificationCenter.default.addObserver(self, selector: #selector(mostrarTabla), name: NSNotification.Name(rawValue: "BD_LISTA"), object: nil)
     }
-    
     @objc func mostrarTabla() {
             bebidas = DataManager.shared.todasLasBebidas()
             print("Mostrando la tabla")

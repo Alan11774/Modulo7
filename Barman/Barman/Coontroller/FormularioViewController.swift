@@ -10,7 +10,7 @@ import UIKit
 class FormularioViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
 
     @IBAction func Cancelar(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil) // Regresa a la vista anterior
+        self.dismiss(animated: true, completion: nil) // Regresa a la vista anterior
     }
     @IBAction func Guardar(_ sender: UIButton) {
         if AñadeInstruccion.text != "" && AñadeIngredientes.text != "" && ImagenCargada.image != nil {
@@ -40,8 +40,7 @@ class FormularioViewController: UIViewController, UIImagePickerControllerDelegat
                 }
                 
                 // Navegar de regreso al TableViewController o hacer otras acciones
-            
-//            self.navigationController?.popViewController(animated: true)
+            NotificationCenter.default.post(name: NSNotification.Name("nuevaRecetaGuardada"), object: nil)
             self.dismiss(animated: true, completion: nil)
             
                 
