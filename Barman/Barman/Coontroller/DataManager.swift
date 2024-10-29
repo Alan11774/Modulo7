@@ -42,6 +42,8 @@ class DataManager: NSObject {
                             let tmp = try JSONSerialization.jsonObject(with: data!) as! [[String:Any]]
 //                            print(tmp)
                             self.guardaBebidas(tmp)
+                            // Actualiza la tabla
+                            NotificationCenter.default.post(name: NSNotification.Name("nuevaRecetaGuardada"), object: nil)
                         }
                         catch { print ("no se obtuvo un JSON en la respuesta") }
                     ud.set(1, forKey:"BD-OK")
